@@ -18,10 +18,10 @@ string[] answers =
     "12"
 };
 
-string playAgain;
+string? playAgain;
 
 Console.WriteLine("What is your name?");
-string playerName = Console.ReadLine();
+string? playerName = Console.ReadLine();
 Console.WriteLine($"\nHello {playerName}, you can type 'skip' to pass a question or 'quit' to stop early.");
 
 do
@@ -31,7 +31,7 @@ do
     for (int i = 0; i < questions.Length; i++)
     {
         Console.WriteLine($"\nQuestion {i + 1}: {questions[i]}");
-        string answer = Console.ReadLine();
+        string? answer = Console.ReadLine();
 
         if (answer == answers[i])
         {
@@ -48,7 +48,7 @@ do
         }
         else
         {
-            Console.WriteLine($"\nIncorrect! The answer was {answer[i]}.");
+            Console.WriteLine($"\nIncorrect! The answer was {answers[i]}.");
         }
     }
 
