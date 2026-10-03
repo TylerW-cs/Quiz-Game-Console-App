@@ -24,6 +24,7 @@ string? playerName = Console.ReadLine();
 do
 {
     int score = 0;
+    int skippedQuestions = 0;
     Console.WriteLine($"\nHello {playerName}, you can type 'skip' to pass a question or 'quit' to stop early.");
 
     for (int i = 0; i < questions.Length; i++)
@@ -38,6 +39,7 @@ do
         }
         else if (answer == "skip")
         {
+            skippedQuestions++;
             continue;
         }
         else if (answer == "quit")
@@ -59,7 +61,7 @@ do
         _ => "C"
     };
     string passFail = score >= 3 ? "Pass" : "Fail";
-    Console.WriteLine($"\nYour final score is {score}/{questions.Length}");
+    Console.WriteLine($"\nYour final score is {score}/{questions.Length} and you skipped {skippedQuestions} questions!");
     Console.WriteLine($"\nYou got {percentageScore}% correct.");
     Console.WriteLine($"\nThis gives you a grade of {grade}, which means you {passFail}!");
     
